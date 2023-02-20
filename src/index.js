@@ -43,3 +43,55 @@ console.log('Proje açıldı!')
 
 
 /* Kodlar Buradan aşağıya */
+const element = document.querySelectorAll("nav a");
+
+element.forEach((element, i) => {
+  element.classList.add("italic");
+  element.textContent = siteContent.nav[`nav-item-${i + 1}`];
+});
+
+
+document.querySelector("#logo-img").src = siteContent.images["logo-img"];
+
+const title = document.querySelector(".cta-text h1");
+title.textContent = siteContent.cta.h1;
+
+const button = document.querySelector(".cta-text button");
+button.textContent = siteContent.cta.button;
+
+const resim = document.querySelector("#cta-img");
+resim.src = siteContent.images["cta-img"];
+
+const middleResim = document.querySelector("#middle-img");
+middleResim.src = siteContent.images["accent-img"];
+
+const h4TextContent = document.querySelectorAll(".text-content h4");
+h4TextContent[0].textContent = siteContent["ana-içerik"]["özellikler-h4"];
+h4TextContent[1].textContent = siteContent["ana-içerik"]["hakkımızda-h4"];
+h4TextContent[2].textContent = siteContent["ana-içerik"]["servisler-h4"];
+h4TextContent[3].textContent = siteContent["ana-içerik"]["ürünler-h4"];
+h4TextContent[4].textContent = siteContent["ana-içerik"]["vizyon-h4"];
+
+
+const pBottom = document.querySelectorAll(".text-content p");
+pBottom[0].textContent =siteContent["ana-içerik"]["özellikler-içerik"];
+pBottom[1].textContent =siteContent["ana-içerik"]["hakkımızda-içerik"];
+pBottom[2].textContent =siteContent["ana-içerik"]["servisler-içeriği"];
+pBottom[3].textContent =siteContent["ana-içerik"]["ürünler-içeriği"];
+pBottom[4].textContent =siteContent["ana-içerik"]["vizyon-içeriği"];
+
+ 
+const ulasım = document.querySelectorAll(".contact h4"); 
+ulasım[0].textContent = siteContent.iletisim["iletişim-h4"];
+
+const bizeUlas = document.querySelectorAll(".contact p");
+bizeUlas[0].textContent = siteContent["iletisim"]["adres"];
+bizeUlas[1].textContent = siteContent["iletisim"]["telefon"];
+bizeUlas[2].textContent = siteContent["iletisim"]["email"];
+
+
+const footerList = document.querySelectorAll("footer a");
+for(let i = 0; i < footerList.length; i++){
+  footerList[i].textContent = siteContent.footer.copyright;
+  footerList[i].setAttribute("class","bold");
+}
